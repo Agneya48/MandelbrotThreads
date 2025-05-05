@@ -37,7 +37,7 @@ public class MandelbrotPanelMT extends JPanel {
 
     public MandelbrotPanelMT() {
         setBackground(Color.BLACK);
-        setColorMode(1);
+        setColorMode(0);
         setPalette(0);
         setupMouseListeners();
     }
