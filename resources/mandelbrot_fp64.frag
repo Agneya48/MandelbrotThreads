@@ -97,72 +97,7 @@ vec4 orbitTrapColor(dvec2 c) {
     vec3 color = applyPalette(t);
     return vec4(color, 1.0);
 }
-/*
-// --- Smooth Coloring ---
-vec4 smoothColor(dvec2 c) {
-    dvec2 z = c;
-    int i = 0;
-    for (; i < u_maxIter; ++i) {
-        if (dot(z, z) > 4.0) break;
-        z = dvec2(z.x * z.x - z.y * z.y, 2.0 * z.x * z.y) + c;
-    }
 
-    float mag = length(vec2(z)); // safely cast to float
-    if (i < u_maxIter && mag > 1e-8) {
-        float mu = float(i) + 1.0 - log(log(mag)) / log(2.0);
-        float t = mu / float(u_maxIter);
-        vec3 color = applyPalette(t);
-        //return vec4(color, color * 0.6, color * 0.2, 1.0);
-        return vec4(color, 1.0);
-    } else {
-        return vec4(0.0, 0.0, 0.0, 1.0);
-    }
-}
-*/
-/*
-vec4 smoothColor(dvec2 c) {
-    dvec2 z = c;
-    int i = 0;
-    for (; i < u_maxIter; ++i) {
-        if (dot(z, z) > 4.0) break;
-        z = dvec2(z.x * z.x - z.y * z.y, 2.0 * z.x * z.y) + c;
-    }
-
-    if (i == u_maxIter) {
-        return vec4(0.0, 0.0, 0.0, 1.0); // Interior of the set
-    }
-
-    double mag = length(z);
-    float logMag = log(log(float(mag)));  // Convert to float before log()
-    float mu = float(i) + 1.0 - logMag / log(2.0);
-    float t = mu / float(u_maxIter);
-
-    vec3 color = applyPalette(t);
-    return vec4(color, 1.0);
-}
-*/
-/*
-vec4 smoothColor(dvec2 c) {
-    dvec2 z = c;
-    int i = 0;
-    for (; i < u_maxIter; ++i) {
-        if (dot(z, z) > 4.0) break;
-        z = dvec2(z.x*z.x - z.y*z.y, 2.0*z.x*z.y) + c;
-    }
-
-    float t;
-    if (i == u_maxIter) {
-        t = 0.0;
-    } else {
-        float mag = length(vec2(z)); // safely cast for final step
-        float mu = float(i) + 1.0 - log(log(mag)) / log(2.0);
-        t = (mu * 5) / float(u_maxIter); //brighten with a * 5 multiplier
-    }
-
-    vec3 color = applyPalette(t); // will naturally wrap or overshoot for color gradients
-    return vec4(color, 1.0);
-}
-*/
 vec4 smoothColor(dvec2 c) {
     dvec2 z = c;
     int i = 0;
