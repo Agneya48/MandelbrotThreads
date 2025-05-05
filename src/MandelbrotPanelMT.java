@@ -7,6 +7,11 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.util.concurrent.*;
 
+/**
+ * A panel display that shows the Mandelbrot set, rendered with the CPU, in either multicore or
+ * single-core mode. Allows a choice between various pallets and Mandelbrot calculation schemas.
+ * @author Josh Hampton hamptojt@mail.uc.edu
+ */
 public class MandelbrotPanelMT extends JPanel {
 
     enum ColorMode { ESCAPE_TIME, SMOOTH, ORBIT_TRAP } // Different render modes for color calc
@@ -234,14 +239,6 @@ public class MandelbrotPanelMT extends JPanel {
         }
         return iter;
     }
-    /*
-    private Color getEscapeColor(double x0, double y0) {
-        int iter = mandelbrot(x0, y0);
-        double t = 1.0 - (double) iter / maxIter;
-        int index = (int) (t * (palette.length - 1));
-        return palette[Math.max(0, Math.min(index, palette.length - 1))];
-    }
-     */
 
     private Color getEscapeColor(double x0, double y0) {
         int iter = mandelbrot(x0, y0);

@@ -11,6 +11,12 @@ import java.nio.FloatBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
+/**
+ * A GPU-accelerated display panel that mimics the function of the CPU-based panel, but renders
+ * faster due to GPU assistance. Still laggy because of Swing limitations. WIP
+ * Consider upgrading to GLCanvas instead
+ * @author Josh Hampton hamptojt@mail.uc.edu
+ */
 public class MandelbrotPanelGPU extends GLJPanel implements GLEventListener {
     private long totalRenderTimeNs = 0;
     private int renderCount = 0;

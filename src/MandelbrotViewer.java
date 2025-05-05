@@ -1,5 +1,10 @@
 import javax.swing.*;
 
+/**
+ * A simple viewer of the Mandelbrot Set in Java Swing. Swaps between a display JPanel for CPU rendering
+ * and an OpenGL based GLJpanel for GPU accelerated rendering.
+ * @author Josh Hampton hamptojt@mail.uc.edu
+ */
 public class MandelbrotViewer extends JFrame {
 
     private MandelbrotPanelMT panel;

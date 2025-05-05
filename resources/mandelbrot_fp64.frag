@@ -3,6 +3,7 @@
 
 //This version of the shader will be used if the computer's GPU supports double-precision calculations
 //It allows for near-real time zooms, with equivalent detail at deep zooms to the CPU rendering mode
+//Author: Josh Hampton, hamptojt@mail.uc.edu
 
 uniform vec2 u_resolution;  // sent as float
 uniform dvec2 u_center;
