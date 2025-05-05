@@ -51,7 +51,7 @@ vec3 applyPalette(float t) {
        vec3 rgb;
 
        if (h < 1.0/6.0) rgb = vec3(c, x, 0.0);
-                                                                                                                                                                     else if (h < 2.0/6.0) rgb = vec3(x, c, 0.0);
+       else if (h < 2.0/6.0) rgb = vec3(x, c, 0.0);
        else if (h < 3.0/6.0) rgb = vec3(0.0, c, x);
        else if (h < 4.0/6.0) rgb = vec3(0.0, x, c);
        else if (h < 5.0/6.0) rgb = vec3(x, 0.0, c);
@@ -67,8 +67,7 @@ vec3 applyPalette(float t) {
        float m = v - c;
        vec3 rgb;
 
-       if (h < 1.0/6.0) rgb = vec3(c, x, 0.0);
-                                                                                                                                                                                                                                       else if (h < 2.0/6.0) rgb = vec3(x, c, 0.0);
+       if (h < 1.0/6.0) rgb = vec3(c, x, 0.0); else if (h < 2.0/6.0) rgb = vec3(x, c, 0.0);
        else if (h < 3.0/6.0) rgb = vec3(0.0, c, x);
        else if (h < 4.0/6.0) rgb = vec3(0.0, x, c);
        else if (h < 5.0/6.0) rgb = vec3(x, 0.0, c);
