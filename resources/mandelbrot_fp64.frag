@@ -79,6 +79,7 @@ vec3 applyPalette(float t) {
     }
 }
 
+//Orbit Trap Mandelbrot mode
 vec4 orbitTrapColor(dvec2 c) {
     dvec2 z = c;
     float minDist = 1e20;
@@ -98,6 +99,7 @@ vec4 orbitTrapColor(dvec2 c) {
     return vec4(color, 1.0);
 }
 
+// Smooth color Mandelbrot Mode
 vec4 smoothColor(dvec2 c) {
     dvec2 z = c;
     int i = 0;
@@ -119,6 +121,7 @@ vec4 smoothColor(dvec2 c) {
     return vec4(color, 1.0);
 }
 
+//Escape Color Mandelbrot mode
 vec4 escapeColor(dvec2 c) {
     dvec2 z = c;
     int i;

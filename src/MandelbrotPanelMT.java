@@ -319,16 +319,6 @@ public class MandelbrotPanelMT extends JPanel {
         return colors;
     }
 
-    //Older HSV palette, currently unused
-    private Color[] generateHSVPalette() {
-        Color[] colors = new Color[256];
-        for (int i = 0; i < colors.length; i++) {
-            float hue = i / 256f;
-            colors[i] = Color.getHSBColor(hue, 1f, 1f);
-        }
-        return colors;
-    }
-
     private Color[] generateOrangeBlackPalette() {
         Color[] colors = new Color[256];
         for (int i = 0; i < colors.length; i++) {
@@ -474,15 +464,7 @@ public class MandelbrotPanelMT extends JPanel {
         double pixelThreshold = 1e-15;
         double pixelWidth = (xMax - xMin) * scale / getWidth();
         double pixelHeight = (yMax - yMin) * scale / getHeight();
-        /*
-        if (pixelWidth < pixelThreshold || pixelHeight < pixelThreshold) {
-            JOptionPane.showMessageDialog(this,
-                    "You've zoomed in too far. Precision limits may affect image quality.",
-                    "Precision Warning",
-                    JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-         */
+
         double cx = xMin + px * (xMax - xMin) / getWidth();
         double cy = yMin + py * (yMax - yMin) / getHeight();
         double newW = (xMax - xMin) * scale;

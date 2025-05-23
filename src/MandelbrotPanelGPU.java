@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /**
  * A GPU-accelerated display panel that mimics the function of the CPU-based panel, but renders
  * faster due to GPU assistance. Still laggy because of Swing limitations. WIP
- * Consider upgrading to GLCanvas instead
+ * Consider upgrading to GLCanvas instead for reduced latency, but more complex implementation
  * @author Josh Hampton hamptojt@mail.uc.edu
  */
 public class MandelbrotPanelGPU extends GLJPanel implements GLEventListener {
@@ -184,7 +184,7 @@ public class MandelbrotPanelGPU extends GLJPanel implements GLEventListener {
     /**
      * Activates the shader and draws the defined quad area
      * Sends the uniform values to the shader, so correct position, zoom, palette, and renderMode are used
-     * Very fast rendering, but currently limited by speed if Swing event dispatch, BufferedImage lag, and
+     * Very fast rendering, but currently limited by speed of Swing event dispatch, BufferedImage lag, and
      * GLJPanel updates. Switching to GLCanvas will resolve these issues at the cost of more complexity.
      */
     @Override

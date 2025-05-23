@@ -14,7 +14,7 @@ public class MandelbrotViewer extends JFrame {
 
     public MandelbrotViewer() {
 
-        setTitle("Mandelbrot - Multithreaded");
+        setTitle("Mandelbrot Viewer");
         setSize(1100, 1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -113,8 +113,6 @@ public class MandelbrotViewer extends JFrame {
         controls.add(timerBox);
         controls.add(new JLabel("Palette:"));
         controls.add(paletteBox);
-        //controls.add(scaleLabel); //Takes up too much space, disabled for now
-        //controls.add(resolutionSlider); //replace with JComboBox
         controls.add(refineBox);
         controls.add(renderLabel);
         controls.add(renderModeBox);
